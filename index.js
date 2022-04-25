@@ -189,6 +189,16 @@ class LedgerBridgeKeyring extends EventEmitter {
     return this.__getPage(-1)
   }
 
+  /**
+  * Returns specific page of accounts.
+  * @param {number} page: The page to get.
+  * @returns accounts on the page.
+  */
+  getPage (page) {
+    this.page = page
+    return this.__getPage(0)
+  }
+
   getAccounts () {
     return Promise.resolve(this.accounts.slice())
   }
