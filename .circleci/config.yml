@@ -18,17 +18,13 @@ workflows:
 jobs:
   prep-deps:
     docker:
-      - image: circleci/node:12
+      - image: circleci/node:14
     steps:
       - checkout
       - run:
           name: Install deps
           command: |
             .circleci/scripts/deps-install.sh
-      - run:
-          name: Collect yarn install HAR logs
-          command: |
-            .circleci/scripts/collect-har-artifact.sh
       - persist_to_workspace:
           root: .
           paths:
@@ -37,7 +33,7 @@ jobs:
 
   test-lint:
     docker:
-      - image: circleci/node:12
+      - image: circleci/node:14
     steps:
       - checkout
       - attach_workspace:
@@ -48,7 +44,7 @@ jobs:
 
   test-unit:
     docker:
-      - image: circleci/node:12
+      - image: circleci/node:14
     steps:
       - checkout
       - attach_workspace:
@@ -59,7 +55,7 @@ jobs:
 
   all-tests-pass:
     docker:
-      - image: circleci/node:12
+      - image: circleci/node:14
     steps:
       - run:
           name: All tests passed
