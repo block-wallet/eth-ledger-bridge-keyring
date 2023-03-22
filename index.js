@@ -1,7 +1,7 @@
 const { EventEmitter } = require('events')
 const HDKey = require('hdkey')
 const ethUtil = require('@ethereumjs/util')
-const rlp = require('@ethereumjs/rlp')
+const rlp = require('rlp')
 const sigUtil = require('eth-sig-util')
 const { TransactionFactory } = require('@ethereumjs/tx')
 

@@ -38,7 +38,7 @@
     "mocha/**/mkdirp": "^0.5.3"
   },
   "dependencies": {
-    "@ethereumjs/rlp": "^4.0.0",
+    "rlp": "^2.2.4",
     "@ethereumjs/tx": "^4.0.2",
     "@ethereumjs/util": "^8.0.3",
     "eth-sig-util": "^2.0.0",
